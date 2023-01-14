@@ -30,7 +30,9 @@ type GameConfig = {
     mouseVisible: bool
     /// All assets (like images, fonts etc) that the game will use
     assetsToLoad: Loadable list
-} 
+
+    isFixedTimeStepWithVsync: bool
+}
 
 /// Specifies the resolution to run the game at. For now, this is set once at initiation.
 and Resolution = 

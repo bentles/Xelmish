@@ -63,6 +63,7 @@ let main _ =
             FileSound ("gameover", "./content/siclone_death.wav")
             FileSound ("victory", "./content/siclone_saucer.wav") ]
         mouseVisible = false
+        isFixedTimeStepWithVsync = true
     }
 
     Program.mkProgram init update view

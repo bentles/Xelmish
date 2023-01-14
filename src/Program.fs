@@ -17,9 +17,11 @@ let runGameLoop config (program: Program<_, _, _, Viewable list>) =
 /// Alternative entry point to Xelmish from Elmish.
 /// Accepts variables to configure common config properties for the game loop
 let runSimpleGameLoop assetsToLoad (windowWidth, windowHeight) clearColour (program: Program<_, _, _, Viewable list>) =
-    let config = {
+    let config = {        
         resolution = Windowed (windowWidth, windowHeight)
         clearColour = Some clearColour
         mouseVisible = true
-        assetsToLoad = assetsToLoad }
+        assetsToLoad = assetsToLoad
+        isFixedTimeStepWithVsync = true
+        }
     runGameLoop config program

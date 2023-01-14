@@ -67,9 +67,11 @@ type GameLoop (config: GameConfig) as this =
        
 
         this.IsMouseVisible <- config.mouseVisible
-        
-        // This makes draw run at monitor fps, rather than 60fps
-        graphics.SynchronizeWithVerticalRetrace <- true 
+
+        this.IsFixedTimeStep <- config.isFixedTimeStepWithVsync
+
+        // True makes draw run at monitor fps, rather than 60fps
+        graphics.SynchronizeWithVerticalRetrace <- config.isFixedTimeStepWithVsync       
 
         graphics.ApplyChanges()
         base.Initialize() 

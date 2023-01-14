@@ -147,6 +147,7 @@ let main _ =
         assetsToLoad = [
             PipelineFont ("defaultFont", "./content/SourceCodePro")
         ]
+        isFixedTimeStepWithVsync = true
     }
 
     Program.mkSimple App.init App.update App.view // standard, out of the box Elmish mkSimple

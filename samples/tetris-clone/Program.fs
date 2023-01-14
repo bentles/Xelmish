@@ -54,6 +54,7 @@ let main _ =
         assetsToLoad = [
             PipelineFont ("connection", "./content/Connection")
         ]
+        isFixedTimeStepWithVsync =  true
     }
 
     Program.mkProgram init update view

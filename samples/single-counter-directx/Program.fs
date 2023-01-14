@@ -65,6 +65,7 @@ let main _ =
         assetsToLoad = [
             PipelineFont ("defaultFont", "./content/SourceCodePro") // the font used in the game needs to be loaded. there is no built-in font.
         ]
+        isFixedTimeStepWithVsync = true
     }
 
     Program.mkSimple init update view // standard, out of the box Elmish initialisation
