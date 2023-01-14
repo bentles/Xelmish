@@ -44,10 +44,6 @@ let update msg m =
             { m with FrameTimeSample = (1000.0 / dt) :: m.FrameTimeSample }
 
 
-// all of the above is straight from the Elmish.WPF sample (with only some indentation changes)
-// the view function below, replacing Elmish.WPF's bindings function, is Xelmish specific,
-// though note it still follows the dispatch model common to Elmish implementations.
-
 let view model dispatch =
     // because all text uses the same font, it is shadowed here with this param already applied
     let text = text "defaultFont"
