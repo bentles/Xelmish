@@ -1,9 +1,7 @@
 ﻿# Simple Counter Sample
 
-This is a very simple project, the archetypical 'hello world' of Elmish: a counter with adjustable step size.
+This sample illustrates the `isFixedTimeStepWithVsync` setting. When set to false MonoGame will continuously run update and draw as fast as possible.
 
-Like sub model, this sample project also demonstrates Xelmish's compatibility with the general Elmish ecosystem: all the code in this project except the view and program setup is lifted directly from Elmish.WPF's sample code (which in turn is lifted from core Elmish). I literally copy-pasted the model, messages, update and init functions, replaced the 'bindings' function with a function that creates Xelmish viewables, and it was done.
+This can be used to create your own update loop as explained [here](https://gafferongames.com/post/fix_your_timestep/). 
 
-Worth looking at if you would like to see the near minimum architecture you can have with Xelmish/Elmish. However note that this sample and the next are UI heavy, where Xelmish and XNA in general is weaker than a UI-focused framework like Fable and Elmish.WPF. Other samples are more game like.
-
-The font used is 'SourceCodePro-Semibold' which is under the SIL Open Font License.
+The example is the simple counter but with an fps counter. You can play with the `isFixedTimeStepWithVsync` and the console trace logging to see the effect on FPS.
