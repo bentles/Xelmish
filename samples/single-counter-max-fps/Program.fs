@@ -32,13 +32,15 @@ let update msg m =
     | SetStepSize x -> { m with StepSize = x }
     | Reset -> init ()
     | Tick(dt, totalGameTime) ->
+        // every sampleFpsEvery ms -> average the framerate samples to display
         if totalGameTime - m.LastSampleTime > sampleFpsEvery then
             { m with
                 LastSampleTime = totalGameTime
-                FrameTimeSample = []
+                FrameTimeSample = [] //restart sample list
                 FpsSample = List.average m.FrameTimeSample }
 
         else
+            // the usual case -> keep building a list of instantaneous fps samples
             { m with FrameTimeSample = (1000.0 / dt) :: m.FrameTimeSample }
 
 
