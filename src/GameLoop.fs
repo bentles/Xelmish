@@ -139,7 +139,7 @@ type GameLoop (config: GameConfig) as this =
         // by default, all sprites are drawing on .End() in a batch
         // immediate changes this so they are drawn as called, which allows us to
         // change the sampler state (e.g. for pixel graphics vs text) between different sprite calls
-        spriteBatch.Begin (sortMode = SpriteSortMode.Immediate, 
+        spriteBatch.Begin (sortMode = SpriteSortMode.FrontToBack, 
                             samplerState = SamplerState.PointClamp)
 
         for drawFunc in drawable do drawFunc assets inputs spriteBatch
