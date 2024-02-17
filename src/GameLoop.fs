@@ -20,6 +20,8 @@ type GameLoop (config: GameConfig) as this =
     
     // this is set and updated every Update (60 times a second)
     let mutable inputs = {
+        gamepadState = Unchecked.defaultof<_>
+        lastGamepadState = Unchecked.defaultof<_>
         keyboardState = Unchecked.defaultof<_>
         lastKeyboardState = Unchecked.defaultof<_>
         mouseState = Unchecked.defaultof<_>
@@ -120,7 +122,10 @@ type GameLoop (config: GameConfig) as this =
     override __.Update gameTime =
         // update inputs. last keyboard and mouse state are preserved so changes can be detected
         inputs <- 
-            {   lastKeyboardState = inputs.keyboardState
+            {   
+                lastGamepadState = inputs.gamepadState
+                gamepadState = GamePad.GetState(PlayerIndex.One)
+                lastKeyboardState = inputs.keyboardState
                 keyboardState = Keyboard.GetState ()
                 lastMouseState = inputs.mouseState
                 mouseState = Mouse.GetState ()

@@ -60,6 +60,8 @@ and Loadable =
 
 /// Current and previous state of input devices
 type Inputs = {
+    gamepadState: GamePadState
+    lastGamepadState: GamePadState
     keyboardState: KeyboardState
     lastKeyboardState: KeyboardState
     mouseState: MouseState
